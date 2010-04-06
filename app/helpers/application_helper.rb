@@ -10,4 +10,14 @@ module ApplicationHelper
 			"#{base_title} | #{@title}"						# String interpolation
 		end
 	end
+	
+	#Return a logo
+	def logo
+		base_logo = image_tag("logo.png", :alt => "Sample App", :class => "round")
+		if @logo.nil?
+			base_logo
+		else
+			"Sample App"
+		end
+	end
 end
