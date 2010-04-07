@@ -7,7 +7,7 @@ module ApplicationHelper
 		if @title.nil?										# Boolean test for nil
 			base_title										# Implicit return
 		else
-			"#{base_title} | #{@title}"						# String interpolation
+			"#{base_title} | #{h(@title)}"						# String interpolation
 		end
 	end
 	
