@@ -10,5 +10,20 @@
 			<strong>Name</strong> <%= h @user.name %><br />
 			<strong>URL</strong> <%= link_to user_path(@user), @user %>
 		</td>
-	</tr>
+	</tr>		
 </table>
+
+<h2>Posts</h2>
+<% @user.posts.each do |c| %>
+	<p>
+		<b>Poster:</b>
+		<%=h c.poster %>
+	</p>
+	<p>
+		<b>Post:</b>
+		<%=h c.body %>
+	</p>
+<% end %>
+
+<%= link_to 'New Post', new_user_post_path(@user) %> | 
+<%= link_to 'Manage Posts', user_posts_path(@user) %>

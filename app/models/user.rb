@@ -9,6 +9,7 @@
 #	created_at	:datetime
 #	updated_at	:datetime
 #
+# also has many posts
 
 class User < ActiveRecord::Base
 	attr_accessor :password
@@ -27,6 +28,7 @@ class User < ActiveRecord::Base
 	# Password validations.
 	validates_presence_of 	:password
 	validates_length_of		:password, :within => 6..40
+	has_many :posts
 	
 	before_save :encrypt_password
 	
