@@ -1,0 +1,28 @@
+<h1>Posts for <%= @user.name %></h1>
+
+<table>
+	<tr>
+		<th>Poster</th>
+		<th>Body</th>
+	</tr>
+
+<% for post in @posts %>
+	<tr>
+		<td><%=h post.poster %></td>
+		<td><%=h post.body %></td>
+		<td><%= link_to 'Show', user_post_path(@user, post) %></td>
+		<td>
+			<%= link_to 'Edit', edit_user_post_path(@user, post) %>
+		</td>
+		<td>
+			<%= link_to 'Destroy', user_post_path(@user, post),
+				:confirm => 'Are you sure?', :method => :delete %>
+		</td>
+	</tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New post', new_user_post_path(@user) %> | 
+<%= link_to 'Back to User', @user %>

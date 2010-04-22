@@ -1,0 +1,14 @@
+<h1>Post on <%= @user.name %></h1>
+
+<p>
+	<b>Poster:</b>
+	<%=h @post.poster %>
+</p>
+
+<p>
+	<b>Post:</b>
+	<%=h @post.body %>
+</p>
+
+<%= link_to 'Edit', edit_user_post_path(@user, @post) %> | 
+<%= link_to 'Back', user_posts_path(@user) %>
